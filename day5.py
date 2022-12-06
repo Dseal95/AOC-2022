@@ -4,7 +4,7 @@ map = []
 instructions = []
 with open('/Users/danielseal/git_local/AOC_2022/data/day5.txt', 'r') as f:
     for line in f.readlines():
-        if line[:1] != 'm':
+        if line[:1] != 'm':  # printed in board directly
             pass
         else:
             tomove = line[:-1].split()[1]
@@ -37,12 +37,10 @@ for inst in instructions:
     crates_from_list = [i for i in mapped[str(inst[1])][int(inst[0]): ]]
     moving_to_list = [i for i in mapped[str(inst[2])]]
     
-    # COMMENT for 1 and 2
+    # top FOR for part1 and bottom FOR for part2 (bottom is reversed)
     # for c in crates_to_move:
     for c in crates_to_move[::-1]:
         moving_to_list.insert(0, c)
-
-    # print(crates_from_list, crates_to_move, moving_to_list, crates_to_move[::-1])
 
     # update board
     mapped[inst[1]] = crates_from_list
