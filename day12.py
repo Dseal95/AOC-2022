@@ -1,7 +1,7 @@
 from collections import deque
 
 grid = []
-with open('/Users/danielseal/git_local/AOC_2022/data/day12_test.txt') as f:
+with open('/Users/danielseal/git_local/AOC_2022/data/day12.txt') as f:
     for line in f.readlines():
         grid.append(list(line[:-1]))
 
@@ -46,6 +46,7 @@ while visited:
         if (0<=ii<imax) and (0<=jj<jmax) and (ngrid[ii][jj] <= (ngrid[i][j] + 1)):
             # print(f'SEARCH: grid[{ii}][{jj}] = {grid[ii][jj]}, cost={cost+1}')
             visited.append(((ii, jj), cost+1))
+
 
 
     
