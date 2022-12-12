@@ -28,7 +28,7 @@ for i in range(imax):
             visited.append(((i, j), 0)) # add starting position to visited
 
 path = set()
-while visited:
+while True:
     (i, j), cost = visited.popleft()
     # print(f'Start: grid[{i}][{j}] = {grid[i][j]}, cost={cost}')
     if (i, j) in path:
@@ -37,7 +37,7 @@ while visited:
 
     if grid[i][j] == 'E':
         print(cost)
-        assert False 
+        break
     
     for dx, dy in [(-1, 0), (0, 1), (1, 0), (0, -1)]:
         ii = i + dx
